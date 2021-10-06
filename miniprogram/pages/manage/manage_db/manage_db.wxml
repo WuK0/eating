@@ -1,0 +1,45 @@
+<view class="container ">
+<view wx:if="{{type === 'class'}}">
+  类别：<input type="text" bindinput="getClassInfo" id="class_input" value="{{name}}"></input>
+  <view class="button button3" bindtap="submitClass" id="class_submit">
+    <text>提交</text>
+  </view>
+</view>
+
+<!-- 菜系添加 -->
+<view wx:elif="{{type && type == 'breeder'}}">
+  <view wx:if="{{fileID}}" bindtap="updateImage">
+    <image src="{{fileID}}" style="width:500rpx" mode="aspectFit"></image>
+  </view>
+  <view wx:else bindtap="doUpload">
+    <image src="../../../images/class/{{type}}.png" style="width:500rpx" mode="aspectFit"></image>
+    <button>上传图片</button>
+  </view>
+
+  <input type="text" bindinput="getName" placeholder="奖励"></input>
+  <input type="number" bindinput="getPrice" placeholder="代价/元"></input>
+  <input type="text" bindinput="getNote" placeholder="备注"></input>
+   <view class="button button3" bindtap="submitClass">
+    <text>提交</text>
+  </view>
+</view>
+
+<view wx:elif="{{type && type != 'class'}}">
+  <view wx:if="{{fileID}}" bindtap="updateImage">
+    <image src="{{fileID}}" style="width:500rpx" mode="aspectFit"></image>
+  </view>
+  <view wx:else bindtap="doUpload">
+    <image src="../../../images/class/{{type}}.png" style="width:500rpx" mode="aspectFit"></image>
+    <button>上传图片</button>
+  </view>
+
+  <input type="text" bindinput="getName" placeholder="菜名"></input>
+  <input type="number" bindinput="getPrice" placeholder="人均价格"></input>
+  <input type="text" bindinput="getNote" placeholder="备注"></input>
+   <view class="button button3" bindtap="submitClass">
+    <text>提交</text>
+  </view>
+</view>
+
+</view>
+

@@ -1,0 +1,16 @@
+/* miniprogram/pages/manage/manage_db/manage_db.wxss */
+page{
+  background-color: #FFFFCC;
+  text-align: center;
+}
+image {
+  width:300rpx;
+  height: 300rpx;
+  padding-top: 150rpx;
+}
+input {
+  width: 300rpx;
+  margin: 0 auto;
+  height: 100rpx;
+}
+

@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/chooseLib/chooseLib",
+    "pages/manage/manage",
+    "pages/random/random",
+    "pages/manage/manage_db/manage_db",
+    "pages/manage/manage_list/manage_list"
+  ],
+  "window": {
+    "backgroundColor": "#FFFFCC",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FFFF99",
+    "navigationBarTitleText": "饿了吃啥啊",
+    "navigationBarTextStyle": "black"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx2c348cf579062e56",
+    "wxece3a9a4c82f58c9"
+  ],
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#777",
+    "selectedColor": "#407AD8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "吃",
+        "iconPath": "/images/eat.png",
+        "selectedIconPath": "/images/eat-selected.png"
+      },
+      {
+        "pagePath": "pages/manage/manage",
+        "text": "饿",
+        "iconPath": "/images/hungry.png",
+        "selectedIconPath": "/images/hungry-selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

@@ -1,0 +1,18 @@
+/* miniprogram/pages/random/random.wxss */
+page{
+  background-color: #FFFFCC;
+  text-align:center;
+}
+.text_view {
+  margin: 0 auto;
+  width: 550rpx;
+  line-height: 50rpx;
+  padding: 20rpx;
+  text-overflow:ellipsis;
+  word-wrap:break-word;
+}
+image {
+  padding-top: 150rpx;
+  width:300rpx;
+  height:300rpx;
+}

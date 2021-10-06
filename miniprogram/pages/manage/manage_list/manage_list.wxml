@@ -1,0 +1,49 @@
+<!--pages/list/list.wxml-->
+<!--列表页-->
+<view class='container'>
+  <!--等待框-->
+  <loading hidden="{{!loading}}">加载中...</loading>
+  <navigator class="addClass" url="../manage_db/manage_db?type={{type}}" open-type="navigate" hover-class="none">
+    <image src="../../../images/add.png" lazy-load="true" mode="aspectFit" />
+  </navigator>
+  <!--顶部标题栏-->
+  <view class='page-header'>
+    <text class='page-title'>{{title}}</text>
+  </view>
+  <view wx:if="{{!loading && datas.length == 0}}" class="nothing">
+    <image src="../../../images/class/{{type}}.png" lazy-load="true" mode="aspectFit" />
+    <view><text>{{result_msg}}</text></view>
+  </view>
+  <!--列表-->
+  <view class='page-body' wx:for="{{datas}}" wx:key="_id">
+    <!--类型判断,显示不同的数据-->
+    <block wx:if="{{item.type === 'order_public'}}">
+        <view class='item'>
+          <image class='poster' src='{{item.img}}'></image>
+          <view class='meta'>
+            <text class='title'>{{item.name}}</text>
+            <view class='artists'>
+              <text>价格：</text>
+              <text>{{item.price}}/人</text>
+            </view>
+            <text class='sub-title'>{{item.note}}</text>
+          </view>
+          
+        </view>
+    </block>
+    <!--另一种情况-->
+    <block wx:else>
+        <view class='item'>
+          <image class='poster' src='{{item.img}}'></image>
+          <view class='meta'>
+            <text class='title'>{{item.name}}</text>
+            <view class='artists'>
+              <text>价格：</text>
+              <text>{{item.price}}/人</text>
+            </view>
+            <text class='sub-title'>{{item.note}}</text>
+          </view>
+        </view>
+    </block>
+  </view>
+</view>

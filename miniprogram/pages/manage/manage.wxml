@@ -1,0 +1,61 @@
+<view class="container ">
+<!-- 点个外卖 -->
+  <view class="box">
+    <navigator url="./manage_list/manage_list?type=order" open-type="navigate">
+      <view class="box_img">
+        <image src="../../images/class/order.png" mode="aspectFit"></image>
+      </view>
+      <view class="box_text">
+          点个外卖
+      </view>
+    </navigator>
+  </view>
+
+  <!-- 吃顿好的 -->
+  <view class="box">
+    <navigator url="./manage_list/manage_list?type=out" open-type="navigate">
+      <view class="box_img">
+        <image src="../../images/class/out.png" mode="aspectFit"></image>
+      </view>
+      <view class="box_text">
+          吃顿好的
+      </view>
+    </navigator>
+  </view>
+
+  <!-- 食堂走起 -->
+  <view class="box">
+    <navigator url="./manage_list/manage_list?type=canteen" open-type="navigate">
+      <view class="box_img">
+        <image src="../../images/class/canteen.png" mode="aspectFit"></image>
+      </view>
+      <view class="box_text">
+          食堂走起
+      </view>
+    </navigator>
+  </view>
+
+  <!-- 自立更生 -->
+  <view class="box">
+    <navigator url="./manage_list/manage_list?type=cook" open-type="navigate">
+      <view class="box_img">
+        <image src="../../images/class/cook.png" mode="aspectFit"></image>
+      </view>
+      <view class="box_text">
+          自立更生
+      </view>
+    </navigator>
+  </view>
+
+  <!-- 找饲养员 -->
+  <view class="box">
+    <navigator url="./manage_list/manage_list?type=breeder" open-type="navigate">
+      <view class="box_img">
+        <image src="../../images/class/breeder.png" mode="aspectFit"></image>
+      </view>
+      <view class="box_text">
+          找饲养员
+      </view>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,91 @@
+<!--miniprogram/pages/random/random.wxml-->
+<view class="container">
+  <!--等待框-->
+  <loading hidden="{{!loading}}">加载中...</loading>
+  <view wx:if="{{length>1}}">
+    <image wx:if="{{type=='class' && datas[currentNum].img}}" src='{{datas[currentNum].img}}' lazy-load="true" mode="aspectFit" />
+    <image wx:elif="{{!isBegin && datas[currentNum].img}}" src='{{datas[currentNum].img}}' lazy-load="true" style="width:300rpx" mode="aspectFit" />
+    <image wx:else src="../../images/class/{{type}}.png" lazy-load="true" style="width:300rpx" mode="aspectFit" />
+    <view class="text_view">
+      <text>{{datas[currentNum].name}}\n</text>
+      <text wx:if="{{datas[currentNum].price}}">{{datas[currentNum].price}}/人\n</text>
+      <text wx:if="{{datas[currentNum].note}}">{{datas[currentNum].note}}</text>
+    </view> 
+    <view wx:if="{{!isBegin && isFirst}}">
+      <view class="button button1 beginBtn" bindtap="startSetInter">
+        <text>begin!</text>
+      </view>
+    </view>
+    <view wx:elif="{{!isBegin && !isFirst}}">
+      <view class="button button1 beginBtn" bindtap="startSetInter">
+        <text>again!</text>
+      </view>
+      <navigator wx:if="{{choose_type && type=='class'}}" url="./random?type={{choose_type}}" open-type="navigate" hover-class="none">
+        <view class="button button2">
+          <text>let's go!</text>
+        </view>
+      </navigator>
+      <view wx:elif="{{type == 'order'}}">
+        <view class="button button2" bindtap="meituan">
+          <text>美团!</text>
+        </view>
+        <view class="button button2" bindtap="eleme">
+          <text>饿了么!</text>
+        </view>
+      </view>
+      <view wx:elif ="{{type == 'breeder'}}">
+        <view class="button button2" bindtap="enjoyBreeder">
+          <text>求投食！！!</text>
+        </view>
+      </view>
+      <view wx:else>
+        <view class="button button2" bindtap="enjoyShow">
+          <text>enjoy it!</text>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="button button1 stopBtn" bindtap="stopSetInter">
+        <text>stop!</text>
+      </view>
+    </view>
+  </view>
+  <view wx:elif="{{length==1}}">
+    <image wx:if="{{datas[currentNum].img}}" src='{{datas[currentNum].img}}' lazy-load="true" style="width:300rpx" mode="aspectFit" />
+    <view class="text_view">
+      <text>{{datas[0].name}}</text>
+    </view>
+    <view wx:if="{{type == 'order'}}">
+        <view class="button button2" bindtap="meituan">
+          <text>美团!</text>
+        </view>
+        <view class="button button2" bindtap="eleme">
+          <text>饿了么!</text>
+        </view>
+    </view>
+    <view wx:elif ="{{type == 'breeder'}}">
+      <view class="button button2" bindtap="enjoyBreeder">
+        <text>只有这个！</text>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="button button2" bindtap="enjoyShow">
+        <text>只有这个！</text>
+      </view>
+    </view>
+    <navigator url="../manage/manage_list/manage_list?type={{type}}" open-type="navigate" hover-class="none">
+      <view class="button button2">
+        <text>加菜去！</text>
+      </view>
+    </navigator>
+  </view>
+  <view wx:else>
+    <image src='../../images/smile.png' style="width:400rpx" mode="aspectFit" />
+    <view class="text_view"><text>请先进行类别管理</text></view>
+    <navigator url="../manage/manage_list/manage_list?type={{type}}" open-type="navigate" hover-class="none">
+      <view class="button button2">
+        <text>let's go!</text>
+      </view>
+    </navigator>
+  </view>
+</view>
